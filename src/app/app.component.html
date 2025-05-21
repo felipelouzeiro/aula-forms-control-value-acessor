@@ -1,6 +1,10 @@
 <form action="" [formGroup]="form">
   <div class="form-field">
-    <app-input label="Rua:" formControlName="rua"/>
+    <app-input class="lightseagreen" label="Rua:" formControlName="rua"/>
+  </div>
+
+  <div class="form-field">
+    <app-input class="palevioletred" label="Cidade:"  formControlName="cidade" />
   </div>
 
   <div class="form-field">
@@ -12,6 +16,7 @@
     <label for="complemento">Complemento:</label>
     <input type="text" id="complemento" formControlName="complemento">
   </div>
+
 
   <button (click)="onClick()"> Print Form </button>
   <button [disabled]="form.invalid"> Enviar </button>

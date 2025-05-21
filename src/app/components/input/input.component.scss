@@ -1,7 +1,74 @@
 :host {
   display: block;
-}
 
   input {
     display: block;
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    padding: 8px 12px;
+    transition: all 0.3 ease;
+
+    &:focus {
+      border-color: green;
+      box-shadow: 0 0 0 2px #4caf501a;
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 1px solid #4caf5080;
+      outline-offset: 1px;
+      border-color: transparent;
+    }
   }
+
+  &.palevioletred {
+    color: palevioletred;
+
+    input {
+      background-color: pink;
+      border-color: plum;
+
+      &:focus {
+        border-color: palevioletred;
+        box-shadow: 0 0 0 2px #db70931a;
+      }
+
+      &:focus-visible {
+        outline-color: #db709380;
+      }
+    }
+  }
+
+  &.lightseagreen {
+    color: lightseagreen;
+
+    input {
+      background-color: lightblue;
+      border-color: aqua;
+
+      &:focus {
+        border-color: lightseagreen;
+        box-shadow: 0 0 0 2px #00ffff1a;
+      }
+
+      &:focus-visible {
+        outline-color: #00ffff80;
+      }
+    }
+  }
+
+  &.ng-touched.ng-invalid {
+    input {
+      border-color: red;
+      outline-offset: red;
+
+      &:focus {
+        box-shadow: 0 0 0 2px #f443361a;
+      }
+
+      &:focus-visible {
+        outline-color: #f4433680;
+      }
+    }
+  }
+}

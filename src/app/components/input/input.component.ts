@@ -5,7 +5,8 @@ import { ControlValueAccessor, FormsModule, NgControl } from '@angular/forms';
   selector: 'app-input',
   imports: [FormsModule],
   templateUrl: './input.component.html',
-  styleUrl: './input.component.scss'
+  styleUrl: './input.component.scss',
+  providers: []
 })
 export class InputComponent implements ControlValueAccessor {
   label = input.required();
