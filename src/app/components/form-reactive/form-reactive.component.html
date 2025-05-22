@@ -1,0 +1,27 @@
+<h6>Form: Reactive Form - Custom Validators</h6>
+
+<form [formGroup]="form">
+  <div class="form-field">
+    <app-input class="lightseagreen" label="Rua:" formControlName="rua"/>
+  </div>
+
+  <div class="form-field">
+    <app-input class="palevioletred" label="Cidade:"  formControlName="cidade" />
+  </div>
+
+  <div class="form-field">
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" formControlName="numero">
+  </div>
+
+  <div class="form-field">
+    <label for="complemento">Complemento:</label>
+    <input type="text" id="complemento" formControlName="complemento">
+  </div>
+
+
+  <button (click)="onClick()"> Print Form </button>
+  <button [disabled]="form.invalid"> Enviar </button>
+
+  <p>Form is valid: {{ form.valid }}</p>
+</form>

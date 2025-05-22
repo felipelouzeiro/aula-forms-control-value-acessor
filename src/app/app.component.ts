@@ -1,27 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputComponent } from './components/input/input.component';
-import { Input2Component } from './components/input2/input2.component';
+import { Component } from '@angular/core';
+import { FormTemplateDrivenComponent } from "./components/form-template-driven/form-template-driven.component";
+import { FormReactiveComponent } from "./components/form-reactive/form-reactive.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule, InputComponent, Input2Component],
+  imports: [FormTemplateDrivenComponent, FormReactiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'aula-forms-control-value-acessor';
-
-  private formBuilder = inject(FormBuilder);
-
-  protected form = this.formBuilder.group({
-    rua: [null, Validators.required],
-    cidade: [null, Validators.required],
-    numero: [null, Validators.required],
-    complemento: [null]
-  });
-
-  onClick() {
-    console.log(this.form);
-  }
 }

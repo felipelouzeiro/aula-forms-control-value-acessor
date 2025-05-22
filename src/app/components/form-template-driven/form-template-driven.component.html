@@ -1,0 +1,11 @@
+<h6>Form: Template Driven Form - Custom Validators</h6>
+
+<div>
+  <input type="text" [(ngModel)]="startsWithValue" placeholder="Starts with">
+</div>
+
+<form #form="ngForm">
+  <input type="text" name="name" ngModel required [starts-with]="startsWithValue">
+</form>
+
+<p>Form is valid: {{ form.valid }}</p>
