@@ -1,0 +1,107 @@
+// button-showcase.component.scss
+:host {
+  display: block;
+  padding: 2rem;
+
+  .showcase {
+    max-width: 1400px; // Aumentado para acomodar mais colunas
+    margin: 0 auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+
+    h3 {
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  .size-section {
+    margin-bottom: 3rem;
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      .label {
+        width: 150px;
+        font-weight: 500;
+        color: #555;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .state-section {
+    margin-bottom: 3rem;
+    overflow-x: auto; // Adicionado scroll horizontal para telas pequenas
+
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr); // 7 colunas agora
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      min-width: 1000px; // Garante que não quebre em telas pequenas
+
+      .state-header {
+        font-weight: 500;
+        color: #555;
+        text-align: center;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .button-state {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+
+        &.hover {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            pointer-events: none;
+          }
+        }
+
+        &.focus {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 1px solid #3b82f6;
+            border-radius: 6px;
+            pointer-events: none;
+          }
+
+          app-custom-button.danger::after {
+            border-color: #ef4444;
+          }
+        }
+      }
+    }
+  }
+}

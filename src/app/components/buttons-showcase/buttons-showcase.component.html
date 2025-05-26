@@ -1,0 +1,184 @@
+<!-- button-showcase.component.html -->
+<div class="showcase">
+  <!-- Tamanhos -->
+  <div class="size-section">
+    <h3>Tamanhos</h3>
+
+    <div class="button-row">
+      <span class="label">Medium (padrão)</span>
+      <div class="buttons">
+        <app-custom-button>Primary</app-custom-button>
+        <app-custom-button variant="outlined" tooltip="Medium button">Primary</app-custom-button>
+        <app-custom-button variant="onlytext">Primary</app-custom-button>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <span class="label">Large</span>
+      <div class="buttons">
+        <app-custom-button size="large">Primary</app-custom-button>
+        <app-custom-button size="large" variant="outlined">Primary</app-custom-button>
+        <app-custom-button size="large" variant="onlytext">Primary</app-custom-button>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <span class="label">Small</span>
+      <div class="buttons">
+        <app-custom-button size="small">Primary</app-custom-button>
+        <app-custom-button size="small" variant="outlined">Primary</app-custom-button>
+        <app-custom-button size="small" variant="onlytext">Primary</app-custom-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estados - Primary -->
+  <div class="state-section">
+    <h3>Estados - Primary</h3>
+
+    <div class="state-grid">
+      <div class="state-header">Normal</div>
+      <div class="state-header">Hover</div>
+      <div class="state-header">Only icon</div>
+      <div class="state-header">Icon left | Icon right</div>
+      <div class="state-header">Loading</div>
+      <div class="state-header">Focus | Full Width</div>
+      <div class="state-header">Disabled</div>
+
+      <!-- Filled -->
+      <div class="button-state">
+        <app-custom-button>Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button>Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button icon="★"></app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button iconLeft="⟵">Primary</app-custom-button>
+        <app-custom-button iconRight="⟶">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button [loading]="true">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button full>Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button [disabled]="true">Primary</app-custom-button>
+      </div>
+
+      <!-- Outlined -->
+      <div class="button-state">
+        <app-custom-button variant="outlined">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="outlined">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="outlined" icon="★"></app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="outlined" iconLeft="⟵">Primary</app-custom-button>
+        <app-custom-button variant="outlined" iconRight="⟶">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="outlined" [loading]="true">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="outlined" full>Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="outlined" [disabled]="true">Primary</app-custom-button>
+      </div>
+
+      <!-- Onlytext -->
+      <div class="button-state">
+        <app-custom-button variant="onlytext">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="onlytext">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="onlytext" icon="★"></app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="onlytext" iconLeft="⟵">Primary</app-custom-button>
+        <app-custom-button variant="onlytext" iconRight="⟶">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="onlytext" [loading]="true">Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="onlytext" full>Primary</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button variant="onlytext" [disabled]="true">Primary</app-custom-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estados - Danger -->
+  <div class="state-section">
+    <h3>Estados - Danger</h3>
+
+    <div class="state-grid">
+      <div class="state-header">Normal</div>
+      <div class="state-header">Hover</div>
+      <div class="state-header">Only icon</div>
+      <div class="state-header">Icon left | Icon right</div>
+      <div class="state-header">Loading</div>
+      <div class="state-header">Focus | Full Width</div>
+      <div class="state-header">Disabled</div>
+
+      <!-- Filled Danger -->
+      <div class="button-state">
+        <app-custom-button color="danger">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" icon="⚠"></app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" iconLeft="⟵">Danger</app-custom-button>
+        <app-custom-button color="danger" iconRight="⟶">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" [loading]="true">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" full>Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" [disabled]="true">Danger</app-custom-button>
+      </div>
+
+      <!-- Onlytext Danger -->
+      <div class="button-state">
+        <app-custom-button color="danger" variant="onlytext">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" variant="onlytext">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" variant="onlytext" icon="⚠"></app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" variant="onlytext" iconLeft="⟵">Danger</app-custom-button>
+        <app-custom-button color="danger" variant="onlytext" iconRight="⟶">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" variant="onlytext" [loading]="true">Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" variant="onlytext" full>Danger</app-custom-button>
+      </div>
+      <div class="button-state">
+        <app-custom-button color="danger" variant="onlytext" [disabled]="true">Danger</app-custom-button>
+      </div>
+    </div>
+  </div>
+</div>

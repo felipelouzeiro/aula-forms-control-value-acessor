@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-* {
-  color-scheme: dark;
+// * {
+//   color-scheme: dark;
+// }
+
+:root {
+  --red-500: #DF0700;
+  --red-600: #A60600;
+  --blue-500: #0070E8;
+  --blue-600: #0054AD;
+  --grayblue-200: #C5CAD6;
+  --grayblue-50: #EFF1F4;
+  --white: #ffffff;
+  --grayblue-900: #212329;
+  --transparent: transparent;
+
+  --red-50: #FFEEED;
+  --blue-200: #90CAF9;
 }

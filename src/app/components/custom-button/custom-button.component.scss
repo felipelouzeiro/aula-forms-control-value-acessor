@@ -1,0 +1,300 @@
+// custom-button.component.scss
+:host {
+  display: inline-block;
+
+  &.full {
+    display: block;
+    width: 100%;
+
+    button.custom-button {
+      width: 100%;
+    }
+  }
+
+  button.custom-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    border: 1px solid transparent;
+    outline: none;
+    font-family: inherit;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+    box-sizing: border-box;
+
+    &:focus-visible {
+      outline: 1px solid;
+      outline-offset: 1px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .button-content {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      &:has(.content:not(:empty)) {
+        gap: 8px;
+      }
+
+      &.hidden {
+        visibility: hidden;
+      }
+
+      .icon,
+      .icon-left,
+      .icon-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: inherit;
+      }
+    }
+
+    .spinner-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .spinner {
+      display: inline-block;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: currentColor;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  // Tamanhos
+  &.large {
+    button.custom-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      min-height: 48px;
+
+      &:has(.button-content > .icon:only-child) {
+        padding: 12px 12px;
+      }
+
+      .spinner {
+        width: 20px;
+        height: 20px;
+        border-width: 3px;
+      }
+    }
+  }
+
+  &.medium {
+    button.custom-button {
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      min-height: 40px;
+
+      &:has(.button-content > .icon:only-child) {
+        padding: 8px 8px;
+      }
+
+      .spinner {
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+      }
+    }
+  }
+
+  &.small {
+    button.custom-button {
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      min-height: 32px;
+
+      &:has(.button-content > .icon:only-child) {
+        padding: 4px 4px;
+      }
+
+      .spinner {
+        width: 12px;
+        height: 12px;
+        border-width: 1.5px;
+      }
+    }
+  }
+
+  // Botão Primário Filled
+  &.filled.primary {
+    button.custom-button {
+      background-color: var(--blue-500);
+      border-color: var(--blue-500);
+      color: var(--white);
+
+      &:hover:not(:disabled) {
+        background-color: var(--blue-600);
+        border-color: var(--blue-600);
+      }
+
+      &:disabled {
+        background-color: var(--grayblue-200);
+        border-color: var(--grayblue-200);
+      }
+
+      &:focus-visible {
+        outline-color: var(--blue-500);
+      }
+
+      .spinner {
+        border-top-color: var(--white);
+      }
+    }
+  }
+
+  // Botão Primário Outlined
+  &.outlined.primary {
+    button.custom-button {
+      background-color: var(--white);
+      color: var(--grayblue-900);
+      border-color: var(--grayblue-200);
+
+      &:hover:not(:disabled) {
+        background-color: var(--grayblue-50);
+      }
+
+      &:disabled {
+        color: var(--grayblue-200);
+      }
+
+      &:focus-visible {
+        outline-color: var(--blue-500);
+      }
+
+      .spinner {
+        border-top-color: var(--grayblue-900);
+      }
+    }
+  }
+
+  // Botão Primário OnlyText
+  &.onlytext.primary {
+    button.custom-button {
+      background-color: var(--transparent);
+      color: var(--grayblue-900);
+      border-color: var(--transparent);
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover:not(:disabled) {
+        background-color: var(--grayblue-50);
+      }
+
+      &:disabled {
+        color: var(--grayblue-200);
+      }
+
+      &:focus-visible {
+        outline-color: var(--blue-500);
+      }
+
+      .spinner {
+        border-top-color: var(--grayblue-900);
+      }
+    }
+
+    &.large button.custom-button {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    &.medium button.custom-button {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    &.small button.custom-button {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+
+  // Botão Danger Filled
+  &.filled.danger {
+    button.custom-button {
+      background-color: var(--red-500);
+      border-color: var(--red-500);
+      color: var(--white);
+
+      &:hover:not(:disabled) {
+        background-color: var(--red-600);
+        border-color: var(--red-600);
+      }
+
+      &:disabled {
+        background-color: var(--grayblue-200);
+        border-color: var(--grayblue-200);
+      }
+
+      &:focus-visible {
+        outline-color: var(--red-500);
+      }
+
+      .spinner {
+        border-top-color: var(--white);
+      }
+    }
+  }
+
+  // Botão Danger OnlyText
+  &.onlytext.danger {
+    button.custom-button {
+      background-color: var(--transparent);
+      color: var(--red-500);
+      border-color: var(--transparent);
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover:not(:disabled) {
+        background-color: var(--red-50);
+      }
+
+      &:disabled {
+        color: var(--grayblue-200);
+      }
+
+      &:focus-visible {
+        outline-color: var(--red-500);
+      }
+
+      .spinner {
+        border-top-color: var(--red-500);
+      }
+    }
+
+    &.large button.custom-button {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    &.medium button.custom-button {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    &.small button.custom-button {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+}
