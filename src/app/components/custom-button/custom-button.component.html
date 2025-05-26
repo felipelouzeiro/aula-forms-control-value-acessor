@@ -1,20 +1,22 @@
 <button
   [disabled]="disabled || loading"
-  [title]="tooltip"
   class="custom-button"
-  [attr.aria-label]="tooltip">
-
-  <!-- Restante do conteúdo permanece igual -->
+  (mouseenter)="showTooltip()"
+  (mouseleave)="hideTooltip()"
+>
   <div class="button-content" [class.hidden]="loading">
     @if (icon && !iconLeft && !iconRight) {
       <span class="icon">{{ icon }}</span>
     }
+
     @if (iconLeft) {
       <span class="icon-left">{{ iconLeft }}</span>
     }
+
     <span class="content">
       <ng-content />
     </span>
+
     @if (iconRight) {
       <span class="icon-right">{{ iconRight }}</span>
     }
@@ -23,6 +25,12 @@
   @if (loading) {
     <div class="spinner-container">
       <span class="spinner"></span>
+    </div>
+  }
+
+  @if (tooltip && isTooltipVisible) {
+    <div class="custom-tooltip">
+      {{ tooltip }}
     </div>
   }
 </button>

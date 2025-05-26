@@ -14,15 +14,24 @@ export class CustomButtonComponent {
   @Input() color: 'primary' | 'danger' = 'primary';
   @Input() size: 'large' | 'medium' | 'small' = 'medium';
   @Input() disabled = false;
-  @Input() tooltip: string = '';
-
-  // Alterado para aceitar tanto string quanto boolean
+  @Input() tooltip = '';
   @Input() full: boolean | '' = false;
-
   @Input() icon = '';
   @Input() iconLeft = '';
   @Input() iconRight = '';
   @Input() loading = false;
+
+  protected isTooltipVisible = false;
+
+  showTooltip() {
+    if (this.tooltip) {
+      this.isTooltipVisible = true;
+    }
+  }
+
+  hideTooltip() {
+    this.isTooltipVisible = false;
+  }
 
   @HostBinding('class')
   get hostClasses(): string {

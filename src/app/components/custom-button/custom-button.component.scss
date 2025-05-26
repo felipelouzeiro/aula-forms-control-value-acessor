@@ -12,6 +12,7 @@
   }
 
   button.custom-button {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +20,6 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
-    position: relative;
     border: 1px solid transparent;
     outline: none;
     font-family: inherit;
@@ -28,6 +28,34 @@
     line-height: 1.5;
     box-sizing: border-box;
 
+    .custom-tooltip {
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 8px);
+      transform: translateX(-50%);
+      background-color: #00000086;
+      color: white;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      z-index: 1000;
+      pointer-events: none;
+      animation: fadeIn 0.2s ease-out;
+
+      /* Seta */
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #00000086 transparent;
+      }
+    }
+
     &:focus-visible {
       outline: 1px solid;
       outline-offset: 1px;
@@ -35,7 +63,6 @@
 
     &:disabled {
       cursor: not-allowed;
-      opacity: 0.6;
     }
 
     .button-content {
@@ -82,7 +109,25 @@
         transform: rotate(360deg);
       }
     }
+
+    /* Prevenção de scroll no tooltip */
+    @media (hover: hover) {
+      button.custom-button {
+        .custom-tooltip {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          transform: translateX(-50%);
+
+          &:not(.visible) {
+            visibility: hidden;
+          }
+        }
+      }
+    }
   }
+
+
 
   // Tamanhos
   &.large {
@@ -221,10 +266,12 @@
       padding-left: 24px;
       padding-right: 24px;
     }
+
     &.medium button.custom-button {
       padding-left: 16px;
       padding-right: 16px;
     }
+
     &.small button.custom-button {
       padding-left: 12px;
       padding-right: 12px;
@@ -288,10 +335,12 @@
       padding-left: 24px;
       padding-right: 24px;
     }
+
     &.medium button.custom-button {
       padding-left: 16px;
       padding-right: 16px;
     }
+
     &.small button.custom-button {
       padding-left: 12px;
       padding-right: 12px;
